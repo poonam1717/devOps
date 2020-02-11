@@ -1,0 +1,20 @@
+version: "3.7"
+services: 
+ app:
+   build:
+   context: .
+   ports:
+     - "5000:5000"
+   volumes:
+     - .:/app
+ mysql:
+   build: mysql-server
+   environment:
+     MYSQL_DATABASE: test
+     MYSQL_ROOT_PASSWORD: root
+     MYSQL_ROOT_HOST: 0.0.0.0
+     MYSQL_USER: poonam
+     MYSQL_PASSWORD: p
+   ports: 
+     - "3306:3306"
+
